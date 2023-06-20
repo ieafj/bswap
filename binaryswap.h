@@ -10,10 +10,9 @@ int binswap(int *array, int arraylen, int maxbit)
 
         for(register int src = 0; src < arraylen - moved;)
         {   if(array[src] & maxbit)
-            {   int dst = (arraylen - 1) - moved, temp = array[dst];
+            {   int dst = arraylen - (++moved), temp = array[dst];
                 array[dst] = array[src];
                 array[src] = temp;
-                moved++;
             }
             else src++;
         }
